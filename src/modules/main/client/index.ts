@@ -1,11 +1,13 @@
-import { RpgClient, RpgModule } from '@rpgjs/client'
+import { RpgClient, RpgModule, RpgGui } from '@rpgjs/client'
 import { Characters } from './characters/characters';
-import { MapTilesets } from './maps/map';
-
+import { MapTilesets, sceneMap } from './maps/map';
 @RpgModule<RpgClient>({ 
     spritesheets: [
         MapTilesets,
         Characters
-    ]
+    ],
+    scenes: {
+        map: sceneMap
+    },
 })
 export default class RpgClientEngine {}

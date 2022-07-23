@@ -1,5 +1,10 @@
 import { RpgPlayer, RpgPlayerHooks, Control,RpgShape, Move, RpgClassMap, RpgMap } from '@rpgjs/server'
-
+declare module "@rpgjs/server" {
+    export interface RpgPlayer {
+        wood: number;
+        woodcuting_xp: number;
+    }
+}
 export const player: RpgPlayerHooks = {
     onConnected(player: RpgPlayer) {
         player.setGraphic('male012')
@@ -22,6 +27,9 @@ export const player: RpgPlayerHooks = {
         // await player.showText('3. The global configuration is done in src/config')
         // await player.showText('And, please, support the project on github https://github.com/RSamaium/RPG-JS ! :)')
         player.setVariable('AFTER_INTRO', true)
+
+        player.gui('my-tooltip').open()
+        player.showAttachedGui()
     },
     onInShape(player: RpgPlayer, shape: RpgShape) {
         console.log('in', player.name, shape.name)

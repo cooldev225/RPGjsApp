@@ -1,5 +1,7 @@
-import { Spritesheet } from '@rpgjs/client'
-
+import { Spritesheet, RpgSceneMapHooks } from '@rpgjs/client'
+export const sceneMap: RpgSceneMapHooks = {
+   
+} 
 @Spritesheet({
     images: {
         '[A]Dirt_pipo': require('./assets/[A]Dirt_pipo.png'),
