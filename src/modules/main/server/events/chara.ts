@@ -12,8 +12,10 @@ export class CharaEvent extends RpgEvent {
         this.setGraphic('female132')
     }
     async onAction(player: RpgPlayer) {
-        await player.showText('How are you?', {
-            talkWith: this
-        })
+        player.gui('my-tooltip').open({hover:true})
+        player.showAttachedGui()
+        // await player.showText('How are you?', {
+        //     talkWith: this
+        // })
     }
 }

@@ -27,9 +27,6 @@ export const player: RpgPlayerHooks = {
         // await player.showText('3. The global configuration is done in src/config')
         // await player.showText('And, please, support the project on github https://github.com/RSamaium/RPG-JS ! :)')
         player.setVariable('AFTER_INTRO', true)
-
-        player.gui('my-tooltip').open()
-        player.showAttachedGui()
     },
     onInShape(player: RpgPlayer, shape: RpgShape) {
         console.log('in', player.name, shape.name)
